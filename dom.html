@@ -22,28 +22,25 @@
 </header>
 <main>
 <h1>DOM_JS. Считываем информацию из DOM</h1>
-<div class="passport">
-    <div class="passport-page">
-        <h3>ПАСПОРТ</h3>
-        <p>РОССИЙСКАЯ ФЕДЕРАЦИЯ</p>
-        <p>Паспорт выдан: ОТДЕЛОМ МВД РОССИИ</p>
-        <p>Дата выдачи: 01.01.2020</p>
-        <p>Код подразделения: 000-000</p>
-    </div>
-    <div class="passport-page">
-        <h3>РОССИЙСКАЯ ФЕДЕРАЦИЯ</h3>
-        <p>Фамилия: <b id="passport_surname">СИМОНОВА</b></p>
-        <p>Имя: <b id="passport_name">ДАРЬЯ</b></p>
-        <p>Отчество: <b>ИВАНОВНА</b></p>
-        <p>Дата рождения: <b id="passport_date">15 АПРЕЛЯ <span id="passport_year">2007</span></b></p>
-        <p>Место рождения: МОСКВА</p>
-    </div>
+<div class="passport-scroll">
+<div class="passport-image">
+    <img src="images/passport_template.png" alt="Образец разворота паспорта">
+    <span class="field issued">ОТДЕЛОМ МВД РОССИИ</span>
+    <span class="field issued-date">01.01.2020</span>
+    <span class="field office-code">000-000</span>
+    <span class="field surname" id="passport_surname">СИМОНОВА</span>
+    <span class="field name" id="passport_name">ДАРЬЯ</span>
+    <span class="field patronymic">ИВАНОВНА</span>
+    <span class="field sex">ЖЕН.</span>
+    <span class="field birthdate"><span id="passport_date">15 АПРЕЛЯ </span><span id="passport_year">2007</span></span>
+    <span class="field birthplace">МОСКВА</span>
+</div>
 </div>
 <h2>Данные из DOM</h2>
 <p><button type="button" onclick="showPassport()">Получить данные</button></p>
 <p id="dom_result"></p>
 <p><a href="change.html">Изменение данных по клику</a></p>
-<p><img src="images/dom_console.png" alt="Получение данных из DOM в консоли" width="600" onerror="this.parentNode.style.display='none'"></p>
+<p><a href="images/dom_console.png" target="_blank">Скриншот выполнения</a></p>
 <script>
 function showPassport() {
     var surname = document.getElementById("passport_surname").innerText;

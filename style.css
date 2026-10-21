@@ -149,3 +149,37 @@ nav .nav-logo img {
 nav .nav-logo.current img {
     border-bottom: 2px solid #444;
 }
+
+.passport-image {
+    position: relative;
+    width: 522px;
+    height: 731px;
+    margin-top: 14px;
+}
+
+.passport-image img {
+    width: 522px;
+    height: 731px;
+    display: block;
+}
+
+.passport-image span.field {
+    position: absolute;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #3c3333;
+    white-space: nowrap;
+}
+
+.passport-image .issued { left: 8%; top: 14%; }
+.passport-image .issued-date { left: 8%; top: 25%; }
+.passport-image .office-code { left: 39%; top: 25%; }
+.passport-image .surname { left: 42%; top: 59.5%; }
+.passport-image .name { left: 42%; top: 65.5%; }
+.passport-image .patronymic { left: 42%; top: 69.7%; }
+.passport-image .sex { left: 38%; top: 73.3%; }
+.passport-image .birthdate { left: 54%; top: 73.3%; }
+.passport-image .birthplace { left: 43%; top: 77.4%; }
+
+.passport-scroll { overflow-x: auto; max-width: 100%; }
