@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM_JS. Считываем информацию из DOM — Marlen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Главная — Marlen"></a>
+        <a href="catalog.html">Каталог</a>
+        <a href="catalog.html#planters">Кашпо</a>
+        <a href="about.html">О нас</a>
+        <a href="care.html">Уход</a>
+        <a href="order.html">Заказ</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="dom.html" class="current">Паспорт</a>
+        <a href="task.html">Задание</a>
+    </nav>
+</header>
+<main>
+<h1>DOM_JS. Считываем информацию из DOM</h1>
+<div class="passport">
+    <div class="passport-page">
+        <h3>ПАСПОРТ</h3>
+        <p>РОССИЙСКАЯ ФЕДЕРАЦИЯ</p>
+        <p>Паспорт выдан: ОТДЕЛОМ МВД РОССИИ</p>
+        <p>Дата выдачи: 01.01.2020</p>
+        <p>Код подразделения: 000-000</p>
+    </div>
+    <div class="passport-page">
+        <h3>РОССИЙСКАЯ ФЕДЕРАЦИЯ</h3>
+        <p>Фамилия: <b id="passport_surname">СИМОНОВА</b></p>
+        <p>Имя: <b id="passport_name">ДАРЬЯ</b></p>
+        <p>Отчество: <b>ИВАНОВНА</b></p>
+        <p>Дата рождения: <b id="passport_date">15 АПРЕЛЯ <span id="passport_year">2007</span></b></p>
+        <p>Место рождения: МОСКВА</p>
+    </div>
+</div>
+<h2>Данные из DOM</h2>
+<p><button type="button" onclick="showPassport()">Получить данные</button></p>
+<p id="dom_result"></p>
+<p><a href="change.html">Изменение данных по клику</a></p>
+<p><img src="images/dom_console.png" alt="Получение данных из DOM в консоли" width="600" onerror="this.parentNode.style.display='none'"></p>
+<script>
+function showPassport() {
+    var surname = document.getElementById("passport_surname").innerText;
+    var name = document.getElementById("passport_name").innerText;
+    var year = document.getElementById("passport_year").innerText;
+    document.getElementById("dom_result").innerText = surname + " " + name + " " + year;
+    console.log(surname, name, year);
+}
+</script>
+</main>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изменяем кириллицу на латиницу по клику — Marlen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Главная — Marlen"></a>
+        <a href="catalog.html">Каталог</a>
+        <a href="catalog.html#planters">Кашпо</a>
+        <a href="about.html">О нас</a>
+        <a href="care.html">Уход</a>
+        <a href="order.html">Заказ</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="dom.html" class="current">Паспорт</a>
+        <a href="task.html">Задание</a>
+    </nav>
+</header>
+<main>
+<h1>Изменяем кириллицу на латиницу по клику</h1>
+<div class="passport">
+    <div class="passport-page">
+        <h3>ПАСПОРТ</h3>
+        <p>РОССИЙСКАЯ ФЕДЕРАЦИЯ</p>
+        <p>Паспорт выдан: ОТДЕЛОМ МВД РОССИИ</p>
+        <p>Дата выдачи: 01.01.2020</p>
+        <p>Код подразделения: 000-000</p>
+    </div>
+    <div class="passport-page">
+        <h3>РОССИЙСКАЯ ФЕДЕРАЦИЯ</h3>
+        <p>Фамилия: <b id="passport_surname">СИМОНОВА</b></p>
+        <p>Имя: <b id="passport_name">ДАРЬЯ</b></p>
+        <p>Отчество: <b>ИВАНОВНА</b></p>
+        <p>Дата рождения: <b id="passport_date">15 АПРЕЛЯ <span id="passport_year">2007</span></b></p>
+        <p>Место рождения: МОСКВА</p>
+    </div>
+</div>
+<p><button type="button" onclick="changePassport()">Перевести на латиницу</button></p>
+<script>
+var year = document.getElementById("passport_year").innerText;
+function changePassport() {
+    document.getElementById("passport_surname").innerText = "SIMONOVA";
+    document.getElementById("passport_name").innerText = "DARIA";
+    document.getElementById("passport_date").innerText = "15 APRIL " + year;
+}
+</script>
+</main>
+</body>
+</html>

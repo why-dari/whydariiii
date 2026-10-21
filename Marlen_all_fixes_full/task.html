@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Решение алгоритмической задачи — Marlen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Главная — Marlen"></a>
+        <a href="catalog.html">Каталог</a>
+        <a href="catalog.html#planters">Кашпо</a>
+        <a href="about.html">О нас</a>
+        <a href="care.html">Уход</a>
+        <a href="order.html">Заказ</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="dom.html">Паспорт</a>
+        <a href="task.html" class="current">Задание</a>
+    </nav>
+</header>
+<main>
+<h1>Решение алгоритмической задачи</h1>
+<h2>Задача 1010</h2>
+<p>Дано число X. Определить, принадлежит ли это число заданному промежутку [a, b].</p>
+<form onsubmit="checkNumber(); return false;">
+    <p><label for="x">X</label><br><input id="x" type="number" step="any" value="5" required></p>
+    <p><label for="a">a</label><br><input id="a" type="number" step="any" value="1" required></p>
+    <p><label for="b">b</label><br><input id="b" type="number" step="any" value="10" required></p>
+    <p><button type="submit">Проверить</button></p>
+</form>
+<p id="result"></p>
+<script>
+function checkNumber() {
+    var x = Number(document.getElementById("x").value);
+    var a = Number(document.getElementById("a").value);
+    var b = Number(document.getElementById("b").value);
+
+    if (a > b) {
+        document.getElementById("result").innerText = "Левая граница не может быть больше правой.";
+    } else if (x >= a && x <= b) {
+        document.getElementById("result").innerText = "Число принадлежит промежутку.";
+    } else {
+        document.getElementById("result").innerText = "Число не принадлежит промежутку.";
+    }
+}
+</script>
+</main>
+</body>
+</html>
