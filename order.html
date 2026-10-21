@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ — Marlen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <a href="index.html"><img src="images/logo.png" alt="Marlen" width="140"></a>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="about.html">О нас</a>
+        <a href="care.html">Уход</a>
+        <a href="order.html" class="current">Заказ</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="dom.html">Паспорт</a>
+        <a href="task.html">Задание</a>
+    </nav>
+</header>
+<main>
+<h1>Заказ</h1>
+<p>Выберите товар в <a href="catalog.html">каталоге</a>.</p>
+<h2>Оформить заказ</h2>
+<form action="https://httpbin.org/post" method="post" target="_blank">
+    <p><label for="product">Товар</label><br><input id="product" type="text" name="product_name" value="Кашпо Улитка" required></p>
+    <p><label for="quantity">Количество</label><br><input id="quantity" type="number" name="quantity" min="1" value="1" required></p>
+    <p>Категория:</p>
+    <p><label><input type="radio" name="product_type" value="furniture"> Мебель</label><br>
+    <label><input type="radio" name="product_type" value="planter" checked> Кашпо</label><br>
+    <label><input type="radio" name="product_type" value="decor"> Декор</label></p>
+    <p><label><input type="checkbox" name="delivery" value="yes" checked> Доставка</label><br>
+    <label><input type="checkbox" name="packaging" value="yes"> Упаковка</label></p>
+    <p><label for="delivery_date">Дата получения</label><br><input id="delivery_date" type="date" name="delivery_date" value="2026-10-25" required></p>
+    <details>
+        <summary>Дополнительно</summary>
+        <p><label for="order_password">Пароль</label><br><input id="order_password" type="password" name="order_password" value="12345" required></p>
+    </details>
+    <input type="hidden" name="shop" value="marlen">
+    <p><input type="submit" value="Отправить заказ"></p>
+</form>
+<details>
+    <summary>Контактные данные</summary>
+    <form action="https://httpbin.org/post" method="post" target="_blank">
+        <p><label for="surname">Фамилия</label><br><input id="surname" type="text" name="surname" value="Симонова" required></p>
+        <p><label for="firstname">Имя</label><br><input id="firstname" type="text" name="firstname" value="Дарья" required></p>
+        <p><label for="group">Группа</label><br><input id="group" type="text" name="student_group" value="БММ253" required></p>
+        <p><label for="phone">Телефон</label><br><input id="phone" type="tel" name="phone" value="+70000000000" required></p>
+        <p><label for="email">Электронная почта</label><br><input id="email" type="email" name="email" value="dvsimonova@edu.hse.ru" required></p>
+        <p><label for="sending_date">Дата отправки</label><br><input id="sending_date" type="date" name="sending_date" value="2026-10-21" required></p>
+        <p><input type="submit" value="Отправить данные"></p>
+    </form>
+</details>
+</main>
+</body>
+</html>

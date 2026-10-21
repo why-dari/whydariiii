@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 1008 — Marlen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <a href="index.html"><img src="images/logo.png" alt="Marlen" width="140"></a>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="about.html">О нас</a>
+        <a href="care.html">Уход</a>
+        <a href="order.html">Заказ</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="dom.html">Паспорт</a>
+        <a href="task.html" class="current">Задание</a>
+    </nav>
+</header>
+<main>
+<h1>Задача 1008</h1>
+<p>Имеются две ёмкости: кубическая с ребром A, цилиндрическая с высотой H и радиусом основания R. Определить, можно ли заполнить жидкостью объёма M первую ёмкость, вторую, обе.</p>
+<p>Объём куба: A × A × A. Объём цилиндра: π × R × R × H.</p>
+<form onsubmit="calculate(); return false;">
+    <p><label for="a">A — ребро куба</label><br><input id="a" type="number" step="any" min="0.000001" value="2" required></p>
+    <p><label for="h">H — высота цилиндра</label><br><input id="h" type="number" step="any" min="0.000001" value="2" required></p>
+    <p><label for="r">R — радиус цилиндра</label><br><input id="r" type="number" step="any" min="0.000001" value="1" required></p>
+    <p><label for="m">M — объём жидкости</label><br><input id="m" type="number" step="any" min="0" value="10" required></p>
+    <p><button type="submit">Проверить</button></p>
+</form>
+<p id="result"></p>
+<script>
+function calculate() {
+    var a = Number(document.getElementById("a").value);
+    var h = Number(document.getElementById("h").value);
+    var r = Number(document.getElementById("r").value);
+    var m = Number(document.getElementById("m").value);
+    var v1 = a * a * a;
+    var v2 = Math.PI * r * r * h;
+    if (a <= 0 || h <= 0 || r <= 0 || m < 0) {
+        document.getElementById("result").innerText = "Введите правильные значения.";
+        return;
+    }
+    var first = m >= v1 ? "да" : "нет";
+    var second = m >= v2 ? "да" : "нет";
+    var both = m >= v1 + v2 ? "да" : "нет";
+    document.getElementById("result").innerText =
+        "Объём куба: " + v1.toFixed(2) + "\n" +
+        "Объём цилиндра: " + v2.toFixed(2) + "\n" +
+        "Заполнить куб: " + first + "\n" +
+        "Заполнить цилиндр: " + second + "\n" +
+        "Заполнить обе ёмкости: " + both;
+}
+</script>
+</main>
+</body>
+</html>
